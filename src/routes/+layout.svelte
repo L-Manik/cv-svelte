@@ -1,8 +1,3 @@
-<script>
-
-	import { JUPYTERLAB_PATH } from "$env/static/private";
-
-</script>
 <svelte:head>
     <script src="https://kit.fontawesome.com/b3bb7373ff.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,33 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </svelte:head>
 
-<div class="parent">
-    <div class="sidebar"/>
-    <div class="content">
-    <slot/>
-    </div>
-</div>
+<slot/>
+
 <style>
+    :global(*){
+        margin:0;
+        padding:0;
+        font-family: "Open Sans", sans-serif;
+    }
     :global(html, body){
         width: 100%;
         height: 100%;
-        padding: 0;
-        margin: 0;
+        background-color: #fffde7;
     }
-    .parent {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-    .sidebar {
-        background-color:rgb(11, 152, 207);
-        width: 100px;
-        height: 100%;
-        margin-right:16px ;
-    }
-    .content {
-        display:flex;
-        flex-direction: column;
-    }
+
 </style>
