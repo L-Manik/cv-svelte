@@ -4,6 +4,8 @@
     import user from 'svelte-awesome/icons/user';
     import briefcase from 'svelte-awesome/icons/briefcase';
     import cogs from 'svelte-awesome/icons/cogs';
+
+    import Section from '$components/Section.svelte'
 </script>
 
 <div class="readable-area">
@@ -20,23 +22,17 @@
 
     <div class="content">
         <div class="content-column">
-            <div class="section-title">
-                <Icon data={user}/>
-                Profile
-            </div>
-            <p><b>NIK</b>: 6527469015797316<br>
-                <b>Jenis Kelamin</b>: Sponge<br>
-                <b>Tempat/Tanggal Lahir</b>: Bandung, 21 September 2001<br>
-                <b>Alamat</b>: Di dasar laut<br>
-                <b>Agama</b>: Kristen<br>
-                <b>Pekerjaan</b>: Pengangguran<br>
-                <b>Status Perkawinan</b>: Belum Kawin<br>
-            </p>
-            <div class="section-title">
-                <Icon data={book}/>
-                Education
-            </div>
-            <br>
+            <Section iconData={user} title="Profile">
+                <p><b>NIK</b>: 6527469015797316<br>
+                    <b>Jenis Kelamin</b>: Sponge<br>
+                    <b>Tempat/Tanggal Lahir</b>: Bandung, 21 September 2001<br>
+                    <b>Alamat</b>: Di dasar laut<br>
+                    <b>Agama</b>: Kristen<br>
+                    <b>Pekerjaan</b>: Pengangguran<br>
+                    <b>Status Perkawinan</b>: Belum Kawin<br>
+                </p>
+            </Section>
+            <Section iconData={book} title="Education">
             <ul>
                 <li>
                     2011-2014
@@ -49,13 +45,10 @@
                     &emsp; New Kelp City Culinary College
                 </li>
             </ul>
+            </Section>
         </div>
         <div class="content-column">
-            <div class="section-title">
-                <Icon data={briefcase}/>
-                Work History
-            </div>
-            <br>
+            <Section iconData={briefcase} title="Work History">
             <ul>
                 <li>
                     Head Cook (2022 - ongoing)
@@ -73,43 +66,40 @@
                     &emsp; Freelance
                 </li>
             </ul>
-            <br>
-            <div class="section-title">
-                <Icon data={cogs}/>
-                Skills
-            </div>
-            <br>
-            <ul>
-                <li><span>Meth Cooking</span>
-                    <div class="gauge">
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                    </div>
-                </li>
-                <li>
-                    <span>Quantum Physics Mastery</span>
-                    <div class="gauge">
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet"></div>
-                    </div>
-                </li>
-                <li>
-                    <span>General Rizz</span>
-                    <div class="gauge">
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet filled-bullet"></div>
-                        <div class="bullet"></div>
-                        <div class="bullet"></div>
-                    </div>
-                </li>
-            </ul>
+            </Section>
+            <Section iconData={cogs} title="Skills">
+                <ul>
+                    <li><span>Meth Cooking</span>
+                        <div class="gauge">
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Quantum Physics Mastery</span>
+                        <div class="gauge">
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>General Rizz</span>
+                        <div class="gauge">
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet filled-bullet"></div>
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                        </div>
+                    </li>
+                </ul>
+            </Section>
         </div>
     </div>
     <a href="/">Return to Main Page</a><br>
@@ -178,8 +168,10 @@ li span {
 
 
 .content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 32px;
+    padding: 32px;
 }
 
 .content-column {
@@ -198,18 +190,7 @@ img {
 }
 
 
-.section-title {
-    display:flex;
-    flex-direction:row;
-    align-items: center;
-    gap: 16px;
-    background-color: #ffeb3b;
-    border-left: 4px solid #fbc02d;
-    color: black;
-    padding: 8px 16px;
-    text-transform: UPPERCASE;
-    font-weight: 500;
-}
+
 
 i {
     background-color: transparent;
@@ -227,7 +208,7 @@ i {
     }
 
     .content {
-        flex-direction: column;
+        grid-template-columns: repeat(1, minmax(0,1fr));   
     }
 }
 </style>
