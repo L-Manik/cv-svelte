@@ -1,3 +1,11 @@
+<script lang="ts">
+    import Icon from "svelte-awesome";
+    import book from 'svelte-awesome/icons/book';
+    import user from 'svelte-awesome/icons/user';
+    import briefcase from 'svelte-awesome/icons/briefcase';
+    import cogs from 'svelte-awesome/icons/cogs';
+</script>
+
 <div class="readable-area">
     <a class="header" href="./photo.html">
         <div class="header-text">
@@ -13,7 +21,7 @@
     <div class="content">
         <div class="content-column">
             <div class="section-title">
-                <i class="fa fa-solid fa-user"></i>
+                <Icon data={user}/>
                 Profile
             </div>
             <p><b>NIK</b>: 6527469015797316<br>
@@ -25,7 +33,7 @@
                 <b>Status Perkawinan</b>: Belum Kawin<br>
             </p>
             <div class="section-title">
-                <i class="fa fa-solid fa-book"></i>
+                <Icon data={book}/>
                 Education
             </div>
             <br>
@@ -44,7 +52,7 @@
         </div>
         <div class="content-column">
             <div class="section-title">
-                <i class="fa fa-solid fa-briefcase"></i>
+                <Icon data={briefcase}/>
                 Work History
             </div>
             <br>
@@ -52,27 +60,27 @@
                 <li>
                     Head Cook (2022 - ongoing)
                     <br>
-                    &emsp; Krusty Krab, Inc.
+                    &emsp; Walter White Labs, Inc.
                 </li>
                 <li>
                     Marketing Associate (2020 - 2022)
                     <br>
-                    &emsp; Chum Bucket Ltd.
+                    &emsp; Hamlin Hamlin McGill Ltd.
                 </li>
                 <li>
-                    Jellyfish Catcher (2018 - 2020)
+                    Meth Dealer (2018 - 2020)
                     <br>
                     &emsp; Freelance
                 </li>
             </ul>
             <br>
             <div class="section-title">
-                <i class="fa fa-solid fa-wand-sparkles"></i>
+                <Icon data={cogs}/>
                 Skills
             </div>
             <br>
             <ul>
-                <li><span>Jellyfish Hunting</span>
+                <li><span>Meth Cooking</span>
                     <div class="gauge">
                         <div class="bullet filled-bullet"></div>
                         <div class="bullet filled-bullet"></div>
@@ -82,7 +90,7 @@
                     </div>
                 </li>
                 <li>
-                    <span>English</span>
+                    <span>Quantum Physics Mastery</span>
                     <div class="gauge">
                         <div class="bullet filled-bullet"></div>
                         <div class="bullet filled-bullet"></div>
@@ -92,7 +100,7 @@
                     </div>
                 </li>
                 <li>
-                    <span>Whale Singing</span>
+                    <span>General Rizz</span>
                     <div class="gauge">
                         <div class="bullet filled-bullet"></div>
                         <div class="bullet filled-bullet"></div>
@@ -161,7 +169,7 @@ li span {
 .header {
     padding: 16px;
     display: flex;
-    flex: row;
+    flex-direction: row;
     align-items: center;
     border-bottom: 2px solid black;
     text-decoration: none;
@@ -189,11 +197,12 @@ img {
     border-radius: 100%;
 }
 
-.fa.fa-solid {
-    margin-right: 8px;
-}
 
 .section-title {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap: 16px;
     background-color: #ffeb3b;
     border-left: 4px solid #fbc02d;
     color: black;
