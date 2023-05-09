@@ -143,7 +143,7 @@ li span {
 }
 
 .header-text {
-    text-align: end;
+    text-align: center;
     flex: 1;
     margin-right: 16px;
     color: #000000;
@@ -154,12 +154,13 @@ li span {
     flex-direction: column;
     background-color: #ffffff;
     margin: 0 15%;
+    height: 100%;
 }
 
 .header {
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-items: center;
     border-bottom: 2px solid black;
     text-decoration: none;
@@ -169,7 +170,7 @@ li span {
 
 .content {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(1, minmax(0,1fr));
     gap: 32px;
     padding: 32px;
 }
@@ -198,17 +199,27 @@ i {
 
 
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
     .header {
-        flex-direction: column-reverse;
+        flex-direction: row;
     }
 
     .header-text {
-        text-align: center;
+        text-align: end;
     }
 
     .content {
-        grid-template-columns: repeat(1, minmax(0,1fr));   
+        grid-template-columns: repeat(2, minmax(0,1fr));   
+    }
+
+    .readable-area {
+        margin: 0 10%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .readable-area {
+        margin: 0 20%;
     }
 }
 </style>
