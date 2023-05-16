@@ -9,14 +9,14 @@
 </script>
 
 <div class="readable-area">
-    <a class="header" href="./photo.html">
+    <a class="header" href="/avatar.svelte">
         <div class="header-text">
             <h1>Squarepants, Spongebob</h1>
             <p>Menace to Society</p>
         </div>
         <img 
         class="avatar" 
-        src="https://i.imgflip.com/5vwbg4.jpg" 
+        src="https://i.imgflip.com/5vwbg4.jpg"
         alt="avatar">
     </a>
 
